@@ -3,54 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diapositiva 1 – Portada</title>
+    <title>Diapositiva 2 – ¿Qué es CSS?</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="slides.css">
     <style> :root { --accent: #7c3aed; --accent2: #06b6d4; } </style>
 </head>
-<body onclick="window.location.href='diapositiva2.html'">
+<body onclick="window.location.href='diapositiva3.html'">
 
-    <!-- Fondo decorativo -->
-    <div class="bg-circle bg-circle--1"></div>
-    <div class="bg-circle bg-circle--2"></div>
-    <div class="bg-circle bg-circle--3"></div>
-
-    <!-- Línea lateral -->
+    <div class="bg-circle bg-circle--1 c-purple"></div>
+    <div class="bg-circle bg-circle--2 c-cyan"></div>
+    <div class="bg-circle bg-circle--3 c-pink"></div>
     <div class="side-line"></div>
 
-    <!-- Contenido de la diapositiva -->
     <div class="slide">
-
-        <span class="tag">Presentación</span>
-
-        <h1 class="title">CSS3: Revolución<br>en el Diseño Web</h1>
-        <p class="subtitle">Una exploración visual de las posibilidades modernas</p>
-
+        <span class="tag">Fundamentos</span>
+        <h1 class="title">¿Qué es CSS?</h1>
+        <p class="subtitle">Cascading Style Sheets</p>
         <div class="divider"></div>
 
         <div class="content-cols">
             <div class="content-col">
-                <p class="col-title">Curso / Profesor</p>
+                <p class="col-title">Definición</p>
                 <ul class="items-list">
-                    <li>Programación Web</li>
-                    <li>Ing. Jonathan Rey</li>
+                    <li>Cascading Style Sheets</li>
+                    <li>Lenguaje de estilos para web</li>
+                    <li>Se usa junto a HTML</li>
+                    <li>Controla colores, tipografías y layouts</li>
                 </ul>
             </div>
             <div class="content-col">
-                <p class="col-title">Fecha</p>
+                <p class="col-title">¿Por qué nació?</p>
                 <ul class="items-list">
-                    <li>2 de marzo de 2026</li>
+                    <li>Antes: HTML con estilos mezclados</li>
+                    <li>Problemas de mantenimiento</li>
+                    <li>Necesidad de separar estructura y diseño</li>
                 </ul>
             </div>
         </div>
-
     </div>
 
-    <!-- Indicadores -->
-    <div class="slide-number">01 / 09</div>
+    <div class="slide-number">02 / 09</div>
     <div class="nav-hint">clic para continuar</div>
-
 </body>
 </html>

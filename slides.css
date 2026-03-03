@@ -1,0 +1,260 @@
+/* ── Reset ── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Fondo decorativo ── */
+.bg-circle {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+}
+.bg-circle--1 { width: 600px; height: 600px; top: -150px; left: -100px; }
+.bg-circle--2 { width: 500px; height: 500px; bottom: -120px; right: -80px; }
+.bg-circle--3 { width: 300px; height: 300px; top: 40%; left: 50%; transform: translate(-50%,-50%); }
+
+/* Color variants */
+.c-purple  { background: #7c3aed; }
+.c-cyan    { background: #06b6d4; }
+.c-pink    { background: #ec4899; }
+.c-blue    { background: #2563eb; }
+.c-green   { background: #10b981; }
+.c-orange  { background: #f97316; }
+.c-red     { background: #ef4444; }
+.c-teal    { background: #14b8a6; }
+.c-yellow  { background: #eab308; }
+.c-indigo  { background: #6366f1; }
+
+/* ── Línea lateral decorativa ── */
+.side-line {
+    position: fixed;
+    left: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 180px;
+    background: linear-gradient(to bottom, transparent, var(--accent, #7c3aed), transparent);
+    z-index: 1;
+}
+
+/* ── Número de diapositiva ── */
+.slide-number {
+    position: fixed;
+    bottom: 32px;
+    right: 48px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    z-index: 2;
+}
+
+/* ── Hint de navegación ── */
+.nav-hint {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    z-index: 2;
+    animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.25; }
+    50%       { opacity: 0.6; }
+}
+
+/* ── Slide container ── */
+.slide {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 960px;
+    width: 100%;
+    animation: fadeUp 0.9s ease both;
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Tag ── */
+.tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--accent, #7c3aed);
+    border: 1px solid color-mix(in srgb, var(--accent, #7c3aed) 30%, transparent);
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 1.4rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ── Títulos ── */
+.title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 0.6rem;
+    background: linear-gradient(135deg, #f5f5f5 30%, var(--accent, #7c3aed) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.subtitle {
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+/* ── Divisor ── */
+.divider {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent, #7c3aed), var(--accent2, #06b6d4));
+    border-radius: 2px;
+    margin: 0 auto 2rem;
+}
+
+/* ── Content columns ── */
+.content-cols {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+    text-align: left;
+}
+.content-col {
+    flex: 1;
+    max-width: 260px;
+}
+.col-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent, #7c3aed);
+    margin-bottom: 0.8rem;
+}
+
+/* ── Listas ── */
+.items-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+.items-list li {
+    font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+    color: rgba(255,255,255,0.72);
+    padding-left: 1.1rem;
+    position: relative;
+    line-height: 1.4;
+}
+.items-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--accent, #7c3aed);
+    opacity: 0.7;
+}
+
+/* ── Año/dato destacado ── */
+.big-stat {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    color: var(--accent, #7c3aed);
+    opacity: 0.9;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+/* ── Tarjetas de tecnología ── */
+.tech-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+.tech-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+    font-family: 'Space Grotesk', sans-serif;
+}
+.tech-card strong {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent, #7c3aed);
+    margin-bottom: 0.25rem;
+}
+
+/* ── Comparación ── */
+.compare-row {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.compare-box {
+    flex: 1;
+    max-width: 220px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.2rem 1.4rem;
+    text-align: left;
+}
+.compare-box h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent, #7c3aed);
+    margin-bottom: 0.7rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .content-cols  { flex-direction: column; align-items: center; }
+    .compare-row   { flex-direction: column; align-items: center; }
+    .side-line     { display: none; }
+    .title         { letter-spacing: -1px; }
+}

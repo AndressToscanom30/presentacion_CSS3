@@ -151,9 +151,10 @@ body {
 
 /* ── Info grid ── */
 .info-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
     max-width: 720px;
     margin: 0 auto;
 }
